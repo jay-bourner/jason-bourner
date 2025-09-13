@@ -1,0 +1,22 @@
+{
+    "intro": {
+        "id": 1,
+        "title": "Hello, I'm Jason Bourner",
+        "subtitle": "A Software Developer based in the UK",
+        "description": "I specialize in creating responsive and user-friendly web applications using modern technologies. With a strong foundation in HTML, CSS, and JavaScript, I bring designs to life and ensure seamless user experiences across all devices.",
+        "services": [
+            "Web Development",
+            "UI/UX Design",
+            "Backend Development",
+            "API Integration",
+            "Performance Optimization",
+            "SEO",
+            "Consulting"
+        ]
+    },
+    "about": {
+        "id": 1,
+        "title": "About Me",
+        "description": "I am a passionate software developer with a knack for problem-solving and a love for coding. With experience in various programming languages and frameworks, I enjoy building applications that make a difference. When I'm not coding, you can find me exploring the outdoors or indulging in my love for photography."
+    }
+}
