@@ -1,5 +1,25 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  
 </template>
+
+<script>
+import { ref } from 'vue'
+import ABOUT from '../../data/aboutDB.js'
+
+export default {
+  name: 'AboutView',
+  components: {
+  },
+  setup() {
+    const about = ref(ABOUT)
+
+    return {
+      about
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>

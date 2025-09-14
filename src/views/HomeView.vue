@@ -9,25 +9,15 @@
         <div v-for="service in intro.services" :key="service" class="grid-item">
           <span>{{ service }}</span>
         </div>
-        <!-- <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div> -->
       </div>
     </div>
-
-
-    <!-- <div class="home-grid">
-      <div v-for="skill in skills" :key="skill.id"  class="grid-item" >
-        {{ skill.name }}
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import { ref } from 'vue'
+import INTRO from '../../data/homeDB.js'
 
 
 export default {
@@ -36,31 +26,10 @@ export default {
   },
   setup() {
     // Composition API logic can be added here
-    const intro = ref([])
-    const skills = ref([])
+    const intro = ref(INTRO)
     const style = ref('')
+    style.value = '--grid-cols: ' + intro.value.services.length
 
-
-    fetch('http://localhost:3000/intro')
-      .then(response => response.json())
-      .then(data => {
-        intro.value = data
-        style.value = '--grid-cols: ' + intro.value.services.length
-        // console.log(intro.value)
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error)
-      })
-
-    // fetch('http://localhost:3000/skills')
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     skills.value = data
-    //     console.log(skills.value)
-    //   })
-    //   .catch(error => {
-    //     console.error('Error fetching data:', error)
-    //   })
     return {
       intro,
       style
@@ -88,7 +57,6 @@ export default {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   gap: 20px;
-  // border: 1px solid black;
 
   h1 {
     grid-column: 1 / span 10;
