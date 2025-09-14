@@ -5,7 +5,8 @@
             <h2>My Personal projects</h2>
             <div class="portfolio-grid">
                 <div v-for="project in portfolio.projects" :key="project.id" class="grid-item">
-                    <span>{{ project.title }}</span>
+                    <!-- <span>{{ project.title }}</span> -->
+                    <img :src="project.image" :alt="project.description">
                 </div>
             </div>
         </div>
@@ -15,7 +16,8 @@
             <p>These have been done in a collaborative team at Naked Kitchens</p>
             <div class="portfolio-grid-commercial">
                 <div v-for="project in portfolio.workRelated" :key="project.id" class="grid-item">
-                    <span>{{ project.title }}</span>
+                    <!-- <span>{{ project.title }}</span> -->
+                    <img :src="project.image" :alt="project.description">
                 </div>
             </div>
         </div>
@@ -76,18 +78,12 @@ export default {
     .grid-item {
         width: 200px;
         height: 200px;
-        background-color: #c5e6fd;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        span {
-            font-size: 0.9em;
-            color: #333;
-            transform: rotate(336deg);
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
         }
     }
 
@@ -101,21 +97,31 @@ export default {
         .grid-item {
             width: 100px;
             height: 100px;
-            background-color: #c5e6fd;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-            // opacity: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            span {
-                font-size: 0.9em;
-                color: #333;
-                transform: rotate(336deg);
+            
+            img {
+                width: 75%;
+                height: 75%;
+                object-fit: cover;
+                border-radius: 10px;
             }
         }
     }
+}
+
+.grid-item {
+    background-color: #eaf3f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: 0.9em;
+        color: #333;
+        transform: rotate(336deg);
+    }
+    
 }
 </style>

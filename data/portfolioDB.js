@@ -1,41 +1,46 @@
+import completeFitnessImage from '../src/assets/images/FITNESS-dgrey.png';
+import jpfMoveWithMeImage from '../src/assets/images/jpfitnesslogo2025.png';
+import nakedKitchensImage from '../src/assets/images/nk-logo.svg';
+import iceKitchensImage from '../src/assets/images/ice-logo.png';
+
 const PORTFOLIO = {
     projects: [
         {
             id: 1,
-            title: "Project One",
-            description: "Description for project one.",
-            image: "project1.jpg",
-            link: "https://example.com/project-one"
+            title: "Em's Complete Fitness and Wellbeing",
+            description: "Web site for a personal trainer around the Rudham area",
+            image: completeFitnessImage,
+            link: "https://www.completefitnessandwellbeing.co.uk/"
         },
         {
             id: 2,
-            title: "Project Two",
-            description: "Description for project two.",
-            image: "project2.jpg",
-            link: "https://example.com/project-two"
+            title: "JPF Move With Me",
+            description: "A web site for a fitness coach specialising in Move Therapy.",
+            image: jpfMoveWithMeImage,
+            link: "https://www.jpf-movewithme.co.uk/"
         },
-        {
-            id: 3,
-            title: "Project Three",
-            description: "Description for project three.",
-            image: "project3.jpg",
-            link: "https://example.com/project-three"
-        }
+        // {
+        //     id: 3,
+        //     title: "Project Three",
+        //     description: "Description for project three.",
+        //     image: "project3.jpg",
+        //     link: "https://example.com/project-three"
+        // }
     ],
     workRelated: [
         {
             id: 1,
-            title: "Work Related One",
-            description: "Description for work related one.",
-            image: "work1.jpg",
-            link: "https://example.com/work-related-one"
+            title: "Naked Kitchens",
+            description: "",
+            image: nakedKitchensImage,
+            link: "https://www.nakedkitchens.com/"
         },
         {
             id: 2,
-            title: "Work Related Two",
-            description: "Description for work related two.",
-            image: "work2.jpg",
-            link: "https://example.com/work-related-two"
+            title: "Ice Kitchens",
+            description: "",
+            image: iceKitchensImage,
+            link: "https://www.icekitchens.co.uk/"
         }
     ]
 };

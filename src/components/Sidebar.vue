@@ -1,14 +1,13 @@
 <template>
+    <Navigation v-if="isMobile" :expand="mobileNav" :class="[expanded ? 'expanded' : '']" />
     <div id="sidebar">
         <div class="display-image">
             <img alt="Vue logo" :src="logo">
         </div>
-        <nav>
-            <router-link to="/">Home</router-link> 
-            <router-link to="/about">About</router-link>
-            <router-link to="/portfolio">Portfolio</router-link>
-            <router-link to="/contact">Contact</router-link>
-        </nav>
+        <button class="expand" @click="mobileNav">
+            <img :src="caret" alt="">
+        </button>
+        <Navigation v-if="!isMobile" />
         <footer>
             <p style="color: white; font-size: 12px;">&copy; {{  year }} Jason Bourner</p>
         </footer>
@@ -16,24 +15,65 @@
 </template>
 
 <script>
-import logo from '@/assets/logo.png' 
+import { ref } from 'vue'
+import Navigation from '@/components/Navigation.vue'
+import logo from '@/assets/images/logo.png' 
+import caret from '@/assets/icons/caret-right.svg'
 
 export default {
     name: 'Sidebar',
-
+    components: {
+        Navigation
+    },
     setup() {
-        const date = new Date();
-        const year = date.getFullYear();
+        const date = new Date()
+        const year = date.getFullYear()
+        const expanded = ref(false)
+        const isMobile = ref(window.innerWidth <= 1024)
 
-        return { 
+        console.log(isMobile.value)
+        const mobileNav = () => {
+            expanded.value = !expanded.value
+        }
+
+        return {
+            isMobile,
+            Navigation,
             logo,
-            year
+            caret,
+            year,
+            mobileNav,
+            expanded,
         }
     }
 }
 </script>
 
 <style lang="scss">
+.expand {
+    display: none;
+
+    @include breakpoint(lg_1) {
+        position: absolute;
+        top: 10px;
+        right: -15px;
+        background-color: rgb(224, 140, 71);
+        border: 2px solid grey;
+        border-radius: 50%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 11;
+
+        img {
+            width: 15px;
+            filter: invert(1);
+        }
+    }
+}
 #sidebar {
     width: 300px;
     display: flex;
@@ -44,7 +84,7 @@ export default {
     top: 0;
     left: 0;
     height: 100%;
-    border-right: 1px solid #eee;
+    // border-right: 1px solid #eee;
     background-color: rgb(224, 140, 71);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
@@ -60,26 +100,23 @@ export default {
         }
     }
 
-    nav {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-
-        a {
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 20px;
-
-            &.router-link-exact-active {
-                text-decoration: underline;
-            }
-        }
-    }
-
     footer {
         position: absolute;
         bottom: 10px;
+    }
+
+    @include breakpoint(lg_1) {
+        width: 150px;
+        height: 150px;
+        justify-content: start;
+        z-index: 10;
+
+
+        .display-image {
+            img {
+                width: 75px;
+            }
+        }
     }
 }
 </style>

@@ -33,6 +33,12 @@ main {
   justify-content: center;
   align-items: center;
   margin-left: 300px;
+
+  @include breakpoint(lg_1) {
+    margin-left: 150px;
+    justify-content: left;
+    margin: 0 10px;
+  }
 }
 
 </style>
