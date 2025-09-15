@@ -3,9 +3,9 @@
         <h1>Contact me for info</h1>
         <div class="contact-methods">
             <div v-for="method in contact.methods" :key="method.label" class="method-item">
-                <a :href="method.link" target="_blank" rel="noopener">
+                <button :href="method.link" target="_blank" rel="noopener">
                     <img :src="method.icon" alt="">
-                </a>
+                </button>
                 <span>{{ method.value }}</span>
             </div>
         </div>
@@ -40,6 +40,15 @@ export default {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    
+    @include breakpoint(xl_1) {
+        margin: 20px auto 0;
+    }
+    
+    @include breakpoint(sm) {
+        width: 90%;
+        padding: 150px 0 0;
+    }
 }
 .contact-methods {
     display: flex;
@@ -53,10 +62,26 @@ export default {
         width: 100%;
         align-items: center;
         display: grid;
+        gap: 20px;
         grid-template-columns: 10% auto;
 
         span {
+            // padding-left: 20px;
             text-align: left;
+        }
+
+        button {
+            // all: unset;
+            cursor: pointer;
+            width: 60px;
+            height: 40px;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            border-radius: 10px;
+            background-color: #ffc18e;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            // transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         // img {
@@ -65,6 +90,14 @@ export default {
         //     object-fit: cover;
         //     border-radius: 10px;
         // }
+        
+        @include breakpoint(md) {
+            grid-template-columns: 15% auto;
+        }
+        
+        @include breakpoint(sm) {
+            grid-template-columns: auto;
+        }
     }
 
     // a {

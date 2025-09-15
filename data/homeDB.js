@@ -1,14 +1,49 @@
+import code from '../src/assets/icons/code.svg';
+import brackets from '../src/assets/icons/brackets-curly.svg';
+import hardDrives from '../src/assets/icons/hard-drives.svg';
+
+import google from '../src/assets/icons/google-logo.svg';
+import design from '../src/assets/icons/app-window.svg';
+import database from '../src/assets/icons/database.svg';
+import dev from '../src/assets/icons/dev-to-logo.svg';
+import devices from '../src/assets/icons/devices.svg';
+import mobile from '../src/assets/icons/device-mobile.svg';
+
 const INTRO = {
     title: 'Welcome to My Portfolio',
     subtitle: 'Showcasing My Work and Skills',
     description: 'I specialize in creating responsive and user-friendly web applications using modern technologies. With a strong foundation in HTML, CSS, and JavaScript, I bring designs to life and ensure seamless user experiences across all devices.',
     services: [
-        'Web Development',
-        'UI/UX Design',
-        'Backend Development',
-        'Mobile Apps',
-        'SEO Optimization',
-        'Content Creation'
+        {
+            name: 'Web Development',
+            icon: dev,
+            description: ''
+        },
+        {
+            name: 'UI/UX Design',
+            icon: design,
+            description: ''
+        },
+        {
+            name: 'Backend Development',
+            icon: database,
+            description: ''
+        },
+        {
+            name: 'Mobile Friendly Apps',
+            icon: mobile,
+            description: ''
+        },
+        {
+            name: 'Search Engine Optimization',
+            icon: google,
+            description: ''
+        },
+        {
+            name: 'Single Page Applications',
+            icon: devices,
+            description: ''
+        }
     ]
 };
 

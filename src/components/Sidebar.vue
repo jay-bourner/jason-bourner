@@ -4,7 +4,7 @@
         <div class="display-image">
             <img alt="Vue logo" :src="me">
         </div>
-        <button class="expand" @click="mobileNav">
+        <button class="expand" :class="[navActive ? 'active' : '']" @click="mobileNav">
             <img :src="caret" alt="">
         </button>
         <Navigation v-if="!isMobile" />
@@ -31,16 +31,18 @@ export default {
         const date = new Date()
         const year = date.getFullYear()
         const expanded = ref(false)
-        const isMobile = ref(window.innerWidth <= 1024)
+        const isMobile = ref(window.innerWidth <= 900)
+        const navActive = ref(false)
         
         window.addEventListener('resize', () => {
-            isMobile.value = window.innerWidth <= 1024
+            isMobile.value = window.innerWidth <= 900
             if (!isMobile.value) {
                 expanded.value = false
             }
         })
         const mobileNav = () => {
             expanded.value = !expanded.value
+            navActive.value = !navActive.value
         }
 
         return {
@@ -51,7 +53,8 @@ export default {
             year,
             mobileNav,
             expanded,
-            me
+            me,
+            navActive
         }
     }
 }
@@ -75,11 +78,17 @@ export default {
         justify-content: center;
         align-items: center;
         z-index: 11;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
 
         img {
             width: 15px;
             filter: invert(1);
         }
+    }
+
+    &.active {
+        transform: rotate(180deg);
     }
 }
 #sidebar {

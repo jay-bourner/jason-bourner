@@ -55,7 +55,26 @@ export default {
     padding: 50px;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
+    margin: auto;
+
+    @include breakpoint(xl_1) {
+        margin: 20px auto 0;
+
+        h1 {
+            width: 50%;
+        }
+    }
+    
+    @include breakpoint(sm) {
+        width: 90%;
+        padding: 50px 0 0;
+        margin: 85px auto 0;
+
+        h1 {
+            width: 100%;
+        }
+    }
 }
 
 .personal-projects {
@@ -89,6 +108,11 @@ export default {
             object-fit: cover;
             border-radius: 10px;
         }
+
+        @include breakpoint(xl_1) {
+            width: 100%;
+            height: auto;
+        }
     }
 
     &-commercial {
@@ -96,11 +120,12 @@ export default {
         gap: 20px;
         width: 50%;
         grid-template-columns: 1fr 1fr;
-        margin: auto;
+        margin: 20px auto;
 
         .grid-item {
             width: 100px;
             height: 100px;
+            margin: auto;
             
             img {
                 width: 75%;
@@ -109,10 +134,19 @@ export default {
                 border-radius: 10px;
             }
         }
+
+        @include breakpoint(md_1) {
+            width: 100%;
+        }
+    }
+
+    @include breakpoint(sm) {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 .grid-item {
+    min-width: 75px;
     background-color: #eaf3f9;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -126,6 +160,5 @@ export default {
         color: #333;
         transform: rotate(336deg);
     }
-    
 }
 </style>

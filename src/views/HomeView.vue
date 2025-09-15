@@ -6,8 +6,9 @@
       <p>{{ intro.description }}</p>
       
       <div class="home-grid" :style="style">
-        <div v-for="service in intro.services" :key="service" class="grid-item">
-          <span>{{ service }}</span>
+        <div v-for="service in intro.services" :key="service.name" class="grid-item">
+          <img :src="service.icon" alt="">
+          <span>{{ service.name }}</span>
         </div>
       </div>
     </div>
@@ -41,13 +42,14 @@ export default {
 <style scoped lang="scss">
 .home {
   display: flex;
-  width: 75%;
+  width: 90%;
   height: 75%;
   gap: 40px;
   padding: 50px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
   
   @include breakpoint(lg_1) {
     width: 100%;
@@ -122,11 +124,10 @@ export default {
   }
   
   .home-grid {
-    grid-column: 1 / span 10;
-    grid-row: 8 / span 2;
-    display: grid;
     gap: 20px;
-    width: 50%;
+    display: grid;
+    grid-row: 8 / span 2;
+    grid-column: 1 / span 10;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
 
     .grid-item {
@@ -137,13 +138,16 @@ export default {
       border-radius: 10px;
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: space-around;
       align-items: center;
+      margin: auto;
+      padding: 10px;
+
 
       span {
         font-size: 0.9em;
         color: #333;
-        transform: rotate(336deg);
       }
     }
     
@@ -162,7 +166,7 @@ export default {
     }
     
     @include breakpoint(sm_2) {
-      grid-row: 8;
+      grid-row: 9;
       grid-template-columns: repeat(2, 1fr);
     }
   }

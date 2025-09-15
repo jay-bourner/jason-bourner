@@ -44,8 +44,7 @@ nav {
         display: flex;
         flex-direction: row;
         gap: 10px;
-        position: absolute;
-        // top: -60px;
+        position: fixed;
         left: -150px;
         z-index:2;
         padding: 0 20px;

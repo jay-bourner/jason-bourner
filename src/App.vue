@@ -31,7 +31,6 @@ main {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-left: 300px;
 
   @include breakpoint(lg_1) {

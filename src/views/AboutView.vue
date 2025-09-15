@@ -59,14 +59,21 @@ export default {
 
 <style scoped lang="scss">
 .about {
-    display: flex;
-    width: 75%;
-    height: 75%;
-    gap: 40px;
-    padding: 50px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  width: 75%;
+  gap: 40px;
+  padding: 50px;
+  flex-direction: column;
+  margin: auto;
+
+  @include breakpoint(xl_1) {
+    margin: 20px auto 0;
+  }
+
+  @include breakpoint(sm_2) {
+    width: 90%;
+    margin: 85px auto 0;
+  }
 }
 .about-content {
   display: grid;
@@ -77,6 +84,10 @@ export default {
   h2{
     text-align: left;
     text-decoration: underline;
+  }
+
+  @include breakpoint(xl_1) {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -9,19 +9,19 @@ const CONTACT = {
     methods: [
         {
             label: 'Email',
-            value: 'email me at jay.bourner@gmail.com with any enquiries',
+            value: 'Email me with any enquiries',
             link: 'mailto:jay.bourner@gmail.com',
             icon: Envolope,
         },
         {
             label: 'Telephone',
-            value: 'Or call me on 07881 107738 to discuss your requirements',
+            value: 'Or call me to discuss your requirements',
             link: 'tel:07881107738',
             icon: Phone,
         },
         {
             label: 'WhatsApp',
-            value: 'Even keeping with the times, you can WhatsApp me on 07881 107738',
+            value: 'Even keeping with the times, you can WhatsApp me',
             link: 'https://wa.me/+447881107738',
             icon: WhatsApp,
         },
