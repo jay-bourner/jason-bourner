@@ -23,7 +23,6 @@ export default {
     setup() {
         const contact = ref(CONTACT)
 
-        // console.log(contact.value)
         return {
             contact
         }

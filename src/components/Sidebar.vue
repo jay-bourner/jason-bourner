@@ -2,7 +2,7 @@
     <Navigation v-if="isMobile" :expand="mobileNav" :class="[expanded ? 'expanded' : '']" />
     <div id="sidebar">
         <div class="display-image">
-            <img alt="Vue logo" :src="logo">
+            <img alt="Vue logo" :src="me">
         </div>
         <button class="expand" @click="mobileNav">
             <img :src="caret" alt="">
@@ -19,6 +19,8 @@ import { ref } from 'vue'
 import Navigation from '@/components/Navigation.vue'
 import logo from '@/assets/images/logo.png' 
 import caret from '@/assets/icons/caret-right.svg'
+import me from '@/assets/images/me-1.jpg'
+// import me from '@/assets/images/me-2.jpg'
 
 export default {
     name: 'Sidebar',
@@ -30,8 +32,13 @@ export default {
         const year = date.getFullYear()
         const expanded = ref(false)
         const isMobile = ref(window.innerWidth <= 1024)
-
-        console.log(isMobile.value)
+        
+        window.addEventListener('resize', () => {
+            isMobile.value = window.innerWidth <= 1024
+            if (!isMobile.value) {
+                expanded.value = false
+            }
+        })
         const mobileNav = () => {
             expanded.value = !expanded.value
         }
@@ -44,6 +51,7 @@ export default {
             year,
             mobileNav,
             expanded,
+            me
         }
     }
 }
@@ -93,6 +101,7 @@ export default {
         background-color: #ccc;
         border-radius: 50%;
         border: 2px solid grey;
+        overflow: hidden;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
         img {

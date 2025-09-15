@@ -62,5 +62,16 @@ nav {
     &.expanded {
         left: 150px;
     }
+    
+    @include breakpoint(sm) {
+        gap: unset;
+        height: 150px;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        a {
+            margin: 5px 0;
+        }
+    }
 }
 </style>

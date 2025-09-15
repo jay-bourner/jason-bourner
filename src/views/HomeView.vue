@@ -48,6 +48,16 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  
+  @include breakpoint(lg_1) {
+    width: 100%;
+    // height: 100%;
+  }
+  
+  @include breakpoint(sm) {
+    height: 100%;        
+    margin-top: 170px;
+  }
 }
 
 .intro {
@@ -65,8 +75,18 @@ export default {
     text-align: left;
     font-weight: bold;
     color: #333;
-    animation: slideInDown 1s ease-out forwards
-    ;
+    animation: slideInDown 1s ease-out forwards;
+
+    @include breakpoint(lg_1) {
+      font-size: 2em;
+      grid-column: 1 / span 10;
+      grid-row: 2 / span 2;
+    }
+    
+    @include breakpoint(sm) {
+      grid-column: 1 / span 10;
+      grid-row: 2 / span 2;
+    }
   }
   
   h2 {
@@ -78,6 +98,12 @@ export default {
     color: #333;
     opacity: 0;
     animation: slideInRight 1s .5s ease-out forwards;
+    
+    @include breakpoint(lg_1) {
+      font-size: 1em;
+      grid-column: 1 / span 10;
+      grid-row: 4 / span 2;
+    }
   }
 
   p {
@@ -88,6 +114,11 @@ export default {
     color: #666;
     opacity: 0;
     animation: fadeIn 1s 1s ease-out forwards;
+    
+    @include breakpoint(lg_1) {
+      grid-column: 1 / span 10;
+      grid-row: 5 / span 5;
+    }
   }
   
   .home-grid {
@@ -105,7 +136,6 @@ export default {
       border: 1px solid #ccc;
       border-radius: 10px;
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-      // opacity: 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -115,6 +145,25 @@ export default {
         color: #333;
         transform: rotate(336deg);
       }
+    }
+    
+    @include breakpoint(lg_1) {
+      grid-row: 8;
+      grid-template-columns: repeat(3, 1fr);
+
+      .grid-item {
+        width: 80px;
+        height: 80px;
+
+        span {
+          font-size: 0.8em;
+        }
+      }
+    }
+    
+    @include breakpoint(sm_2) {
+      grid-row: 8;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

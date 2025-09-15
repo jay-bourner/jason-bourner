@@ -5,8 +5,10 @@
             <h2>My Personal projects</h2>
             <div class="portfolio-grid">
                 <div v-for="project in portfolio.projects" :key="project.id" class="grid-item">
-                    <!-- <span>{{ project.title }}</span> -->
-                    <img :src="project.image" :alt="project.description">
+                    <a :href="project.link" target="_blank" rel="noopener noreferrer">
+                        <!-- <span>{{ project.title }}</span> -->
+                        <img :src="project.image" :alt="project.description">
+                    </a>
                 </div>
             </div>
         </div>
@@ -16,8 +18,10 @@
             <p>These have been done in a collaborative team at Naked Kitchens</p>
             <div class="portfolio-grid-commercial">
                 <div v-for="project in portfolio.workRelated" :key="project.id" class="grid-item">
-                    <!-- <span>{{ project.title }}</span> -->
-                    <img :src="project.image" :alt="project.description">
+                    <a :href="project.link" target="_blank" rel="noopener noreferrer">
+                        <!-- <span>{{ project.title }}</span> -->
+                        <img :src="project.image" :alt="project.description">
+                    </a>
                 </div>
             </div>
         </div>
