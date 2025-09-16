@@ -9,13 +9,13 @@ const CONTACT = {
     methods: [
         {
             label: 'Email',
-            value: 'Email me with any enquiries',
-            link: 'mailto:jay.bourner@gmail.com',
+            value: 'Want to know more? Email me with any enquiries',
+            link: 'mailto:admin@jason-bourner.co.uk',
             icon: Envolope,
         },
         {
             label: 'Telephone',
-            value: 'Or call me to discuss your requirements',
+            value: 'Or call me if you feel i can help in any way.',
             link: 'tel:07881107738',
             icon: Phone,
         },
@@ -34,7 +34,7 @@ const CONTACT = {
         {
             label: 'GitHub',
             value: 'Or if you want to look at some of my previous work, checkout my GitHub (be warned... it is all code!)',
-            link: 'https://www.github.com/',
+            link: 'https://github.com/jay-bourner',
             icon: GitHub,
         },
     ]

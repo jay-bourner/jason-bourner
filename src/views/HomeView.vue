@@ -43,7 +43,6 @@ export default {
 .home {
   display: flex;
   width: 90%;
-  // height: 75%;
   gap: 40px;
   padding: 50px;
   align-items: center;

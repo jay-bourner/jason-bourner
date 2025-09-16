@@ -1,6 +1,6 @@
 const ABOUT = {
     title: 'About Me',
-    description: 'I am a passionate developer with a knack for creating efficient and scalable web applications. With a skills in both front-end and back-end technologies, I strive to deliver seamless user experiences.',
+    description: 'I am a passionate developer with a knack for creating efficient and scalable web applications. With skills in both front-end and back-end technologies, I strive to deliver seamless user experiences.',
     skills: [
         {
             id: 1,
@@ -51,14 +51,14 @@ const ABOUT = {
     ],
     qualifications: [
         {
-            cert: 'Bachelor of Science in Computing and IT (Software Development)',
-            institution: 'Open University',
-            year: '2024'
-        },
-        {
             cert: 'Azure cloud fundamentals',
             institution: 'Microsoft Learn',
             year: '2023'
+        },
+        {
+            cert: 'Bachelor of Science in Computing and IT (Software Development)',
+            institution: 'Open University',
+            year: '2024'
         },
         {
             cert: 'Continuous learning through tutorials and courses on web development, cloud computing, and software engineering.',
