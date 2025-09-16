@@ -34,20 +34,19 @@ export default {
 .contact {
     display: flex;
     width: 75%;
-    height: 75%;
+    // height: 75%;
     gap: 40px;
     padding: 50px;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
     
     @include breakpoint(xl_1) {
-        margin: 20px auto 0;
+        margin: 100px auto 0;
     }
     
     @include breakpoint(sm) {
         width: 90%;
-        padding: 150px 0 0;
+        padding: 50px 25px;
     }
 }
 .contact-methods {

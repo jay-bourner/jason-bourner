@@ -43,7 +43,7 @@ export default {
 .home {
   display: flex;
   width: 90%;
-  height: 75%;
+  // height: 75%;
   gap: 40px;
   padding: 50px;
   align-items: center;
@@ -53,12 +53,11 @@ export default {
   
   @include breakpoint(lg_1) {
     width: 100%;
-    // height: 100%;
+    margin: 100px auto 0;
   }
   
   @include breakpoint(sm) {
-    height: 100%;        
-    margin-top: 170px;
+    height: 100%;
   }
 }
 
@@ -82,13 +81,13 @@ export default {
     @include breakpoint(lg_1) {
       font-size: 2em;
       grid-column: 1 / span 10;
-      grid-row: 2 / span 2;
+      grid-row: 1 / span 2;
     }
     
-    @include breakpoint(sm) {
-      grid-column: 1 / span 10;
-      grid-row: 2 / span 2;
-    }
+    // @include breakpoint(sm) {
+    //   grid-column: 1 / span 10;
+    //   grid-row: 2 / span 2;
+    // }
   }
   
   h2 {
@@ -104,7 +103,7 @@ export default {
     @include breakpoint(lg_1) {
       font-size: 1em;
       grid-column: 1 / span 10;
-      grid-row: 4 / span 2;
+      // grid-row: 3 / span 2;
     }
   }
 
@@ -119,7 +118,7 @@ export default {
     
     @include breakpoint(lg_1) {
       grid-column: 1 / span 10;
-      grid-row: 5 / span 5;
+      grid-row: 4 / span 5;
     }
   }
   

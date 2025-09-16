@@ -42,35 +42,28 @@ nav {
 
     @include breakpoint(lg_1) {
         display: flex;
-        flex-direction: row;
-        gap: 10px;
+        width: 110px;
         position: fixed;
-        left: -150px;
+        height: 150px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        left: 0;
+        top: 150px;
         z-index:2;
         padding: 0 20px;
         border-bottom-right-radius: 10px;
         background-color: rgb(224, 140, 71);
-        transition: left 0.3s ease;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
 
         a {
-            color: black;
-            margin: 20px 0;
+            // color: black;
+            margin: 5px 0;
         }
     }
 
     &.expanded {
-        left: 150px;
-    }
-    
-    @include breakpoint(sm) {
-        gap: unset;
-        height: 150px;
-        flex-direction: column;
-        justify-content: space-evenly;
-
-        a {
-            margin: 5px 0;
-        }
+        transform: translateY(0);
     }
 }
 </style>

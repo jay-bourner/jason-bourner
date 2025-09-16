@@ -1,6 +1,6 @@
 <template>
     <div class="portfolio">
-        <h1>Welcome to my portfolio page</h1>
+        <h1>Take a look at my work <br><small>so far...</small></h1>
         <div class="personal-projects">
             <h2>My Personal projects</h2>
             <div class="portfolio-grid">
@@ -55,21 +55,16 @@ export default {
     padding: 50px;
     align-items: center;
     flex-direction: column;
-    // justify-content: center;
     margin: auto;
 
     @include breakpoint(xl_1) {
-        margin: 20px auto 0;
-
-        h1 {
-            width: 50%;
-        }
+        margin: 100px auto 0;
     }
     
     @include breakpoint(sm) {
         width: 90%;
         padding: 50px 0 0;
-        margin: 85px auto 0;
+        // margin: 85px auto 0;
 
         h1 {
             width: 100%;

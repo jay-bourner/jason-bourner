@@ -6,10 +6,13 @@
       <div class="about-content">
         <div class="skills">
           <h2>Skills</h2>
-          <div v-for="skill in about.skills" :key="skill.title" class="skill-item">
-            <strong>{{ skill.title }}: {{ skill.icon }}</strong>
-            <div class="details">
+          <div v-for="skill in about.skills" :key="skill.id" class="skill-item">
+            <strong v-if="(skill.title)">{{ skill.title }}: {{ skill.icon }}</strong>
+            <div v-if="(!skill.caption)" class="details">
               <span>level: <small>{{ skill.level }} with {{  skill.experience }}</small></span>
+            </div>
+            <div v-else class="skill-caption">
+              <small>{{ skill.caption }}</small>
             </div>
           </div>
         </div>
@@ -67,12 +70,12 @@ export default {
   margin: auto;
 
   @include breakpoint(xl_1) {
-    margin: 20px auto 0;
+    margin: 100px auto 0;
   }
 
   @include breakpoint(sm_2) {
     width: 90%;
-    margin: 85px auto 0;
+    // margin: 85px auto 0;
   }
 }
 .about-content {
@@ -117,5 +120,11 @@ export default {
 
 .experience-item {
   margin-bottom: 15px;
+}
+
+.skill-caption {
+  border-top: 1px solid #ccc;
+  margin-top: 5px;
+  padding-top: 5px;
 }
 </style>

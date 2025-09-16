@@ -66,8 +66,10 @@ export default {
 
     @include breakpoint(lg_1) {
         position: absolute;
-        top: 10px;
-        right: -15px;
+        // top: 10px;
+        // right: -15px;
+        bottom: -15px;
+        right: 10px;
         background-color: rgb(224, 140, 71);
         border: 2px solid grey;
         border-radius: 50%;
@@ -78,7 +80,7 @@ export default {
         justify-content: center;
         align-items: center;
         z-index: 11;
-        transform: rotate(0deg);
+        transform: rotate(90deg);
         transition: transform 0.3s ease;
 
         img {
@@ -88,7 +90,7 @@ export default {
     }
 
     &.active {
-        transform: rotate(180deg);
+        transform: rotate(270deg);
     }
 }
 #sidebar {
