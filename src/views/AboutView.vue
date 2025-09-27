@@ -44,7 +44,7 @@
 
 <script>
 import { ref } from 'vue'
-import ABOUT from '../../data/aboutDB.js'
+import ABOUT from '../data/aboutDB.js'
 
 export default {
   name: 'AboutView',

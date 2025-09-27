@@ -1,9 +1,9 @@
-import google from '../src/assets/icons/google-logo.svg';
-import design from '../src/assets/icons/app-window.svg';
-import database from '../src/assets/icons/database.svg';
-import dev from '../src/assets/icons/dev-to-logo.svg';
-import devices from '../src/assets/icons/devices.svg';
-import mobile from '../src/assets/icons/device-mobile.svg';
+import google from '../assets/icons/google-logo.svg';
+import design from '../assets/icons/app-window.svg';
+import database from '../assets/icons/database.svg';
+import dev from '../assets/icons/dev-to-logo.svg';
+import devices from '../assets/icons/devices.svg';
+import mobile from '../assets/icons/device-mobile.svg';
 
 const INTRO = {
     title: 'Welcome to My Portfolio',

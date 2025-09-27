@@ -1,7 +1,7 @@
-import completeFitnessImage from '../src/assets/images/FITNESS-dgrey.png';
-import jpfMoveWithMeImage from '../src/assets/images/jpfitnesslogo2025.png';
-import nakedKitchensImage from '../src/assets/images/nk-logo.svg';
-import iceKitchensImage from '../src/assets/images/ice-logo.png';
+import completeFitnessImage from '../assets/images/FITNESS-dgrey.png';
+import jpfMoveWithMeImage from '../assets/images/jpfitnesslogo2025.png';
+import nakedKitchensImage from '../assets/images/nk-logo.svg';
+import iceKitchensImage from '../assets/images/ice-logo.png';
 
 const PORTFOLIO = {
     projects: [

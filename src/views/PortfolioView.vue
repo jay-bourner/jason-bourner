@@ -30,7 +30,7 @@
 
 <script>
 import { ref } from 'vue'
-import PORTFOLIO from '../../data/portfolioDB.js'
+import PORTFOLIO from '../data/portfolioDB.js'
 
 export default {
     name: 'PortfolioView',

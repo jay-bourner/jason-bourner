@@ -18,7 +18,7 @@
 <script>
 // @ is an alias to /src
 import { ref } from 'vue'
-import INTRO from '../../data/homeDB.js'
+import INTRO from '../data/homeDB.js'
 
 
 export default {

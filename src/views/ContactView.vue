@@ -14,7 +14,7 @@
 
 <script>
 import { ref } from 'vue'
-import CONTACT from '../../data/contactDB.js'
+import CONTACT from '../data/contactDB.js'
 
 export default {
     name: 'ContactView',
