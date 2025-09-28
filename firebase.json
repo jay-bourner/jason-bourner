@@ -1,7 +1,6 @@
 {
   "apphosting": {
     "backendId": "jason-bourner",
-    "rootDir": "dist",
     "ignore": [
       "node_modules",
       ".git",
