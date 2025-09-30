@@ -20,9 +20,16 @@
 import { ref } from 'vue'
 import INTRO from '../data/homeDB.js'
 
-
 export default {
   name: 'HomeView',
+  metaInfo: {
+    title: 'Home',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      // { name: 'description', content: 'Welcome to my personal website. I am a full-stack developer specializing in modern web technologies. Explore my services and projects.' }
+    ]
+  },
   components: {
   },
   setup() {
