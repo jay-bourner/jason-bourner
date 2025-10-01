@@ -2,7 +2,7 @@
     <Navigation v-if="isMobile" :expand="mobileNav" :class="[expanded ? 'expanded' : '']" />
     <div id="sidebar">
         <div class="display-image">
-            <img alt="Vue logo" :src="me">
+            <img alt="Vue logo" :src="image">
         </div>
         <button class="expand" :class="[navActive ? 'active' : '']" @click="mobileNav">
             <img :src="caret" alt="">
@@ -19,8 +19,8 @@ import { ref } from 'vue'
 import Navigation from '@/components/Navigation.vue'
 import logo from '@/assets/images/logo.png' 
 import caret from '@/assets/icons/caret-right.svg'
-import me from '@/assets/images/me-1.jpg'
-// import me from '@/assets/images/me-2.jpg'
+import image from '@/assets/images/me-1.jpg'
+// import image from '@/assets/images/jb-favicon.png'
 
 export default {
     name: 'Sidebar',
@@ -53,7 +53,7 @@ export default {
             year,
             mobileNav,
             expanded,
-            me,
+            image,
             navActive
         }
     }
@@ -66,8 +66,6 @@ export default {
 
     @include breakpoint(lg_1) {
         position: absolute;
-        // top: 10px;
-        // right: -15px;
         bottom: -15px;
         right: 10px;
         background-color: rgb(224, 140, 71);
@@ -103,11 +101,12 @@ export default {
     top: 0;
     left: 0;
     height: 100%;
-    // border-right: 1px solid #eee;
     background-color: rgb(224, 140, 71);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
     .display-image {
+        width: 150px;
+        height: 150px;
         margin: 20px 0;
         background-color: #ccc;
         border-radius: 50%;
@@ -116,7 +115,8 @@ export default {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
         img {
-            width: 150px;
+            width: 160px;
+            object-fit: cover;
         }
     }
 
