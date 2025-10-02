@@ -115,7 +115,7 @@ export default {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
         img {
-            width: 160px;
+            width: 100%;
             object-fit: cover;
         }
     }
@@ -133,8 +133,11 @@ export default {
 
 
         .display-image {
+            width: 75px;
+            height: 75px;
+
             img {
-                width: 75px;
+                width: 100%;
             }
         }
     }
