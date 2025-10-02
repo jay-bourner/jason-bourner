@@ -5,8 +5,7 @@
             <h2>My Personal projects</h2>
             <div class="portfolio-grid">
                 <div v-for="project in portfolio.projects" :key="project.id" class="grid-item">
-                    <a :href="project.link" target="_blank" rel="noopener noreferrer">
-                        <!-- <span>{{ project.title }}</span> -->
+                    <a @mouseover="portfolioMenu(portfolio)" :href="project.link" target="_blank" rel="noopener noreferrer">
                         <img :src="project.image" :alt="project.description">
                     </a>
                 </div>
@@ -19,7 +18,6 @@
             <div class="portfolio-grid-commercial">
                 <div v-for="project in portfolio.workRelated" :key="project.id" class="grid-item">
                     <a :href="project.link" target="_blank" rel="noopener noreferrer">
-                        <!-- <span>{{ project.title }}</span> -->
                         <img :src="project.image" :alt="project.description">
                     </a>
                 </div>
@@ -39,8 +37,13 @@ export default {
     setup() {
         const portfolio = ref(PORTFOLIO)
 
+        const portfolioMenu = () => {
+            console.log('portfolio menu')
+        } 
+
         return {
-            portfolio
+            portfolio,
+            portfolioMenu
         }
     }
 }
@@ -50,7 +53,6 @@ export default {
 .portfolio {
     display: flex;
     width: 75%;
-    height: 75%;
     gap: 40px;
     padding: 50px;
     align-items: center;
@@ -64,7 +66,6 @@ export default {
     @include breakpoint(sm) {
         width: 90%;
         padding: 50px 0 0;
-        // margin: 85px auto 0;
 
         h1 {
             width: 100%;

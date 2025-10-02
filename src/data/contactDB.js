@@ -10,7 +10,7 @@ const CONTACT = {
         {
             label: 'Email',
             value: 'Want to know more? Email me with any enquiries',
-            link: 'mailto:admin@jason-bourner.co.uk',
+            link: 'mailto:jay.bourner@outlook.co.uk',
             icon: Envolope,
         },
         {
