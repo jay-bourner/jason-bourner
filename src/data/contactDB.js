@@ -21,7 +21,7 @@ const CONTACT = {
         },
         {
             label: 'GitHub',
-            value: 'Or if you want to look at some of my previous work, checkout my GitHub (be warned... it is all code!)',
+            value: 'Or if you want to look at some of my previous work, checkout my GitHub',
             link: 'https://github.com/jay-bourner',
             icon: GitHub,
         },
