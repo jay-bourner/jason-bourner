@@ -5,9 +5,18 @@
             <h2>My Personal projects</h2>
             <div class="portfolio-grid">
                 <div v-for="project in portfolio.projects" :key="project.id" class="grid-item">
-                    <a @mouseover="portfolioMenu(portfolio)" :href="project.link" target="_blank" rel="noopener noreferrer">
+                    <button @mouseover="portfolioMenu(portfolio)" :href="project.link" target="_blank" rel="noopener noreferrer">
                         <img :src="project.image" :alt="project.description">
-                    </a>
+                    </button>
+                    <span class="popoutPanel">
+                        <button>
+                            <img :src="eye" alt="">
+                        </button>
+                        <hr>
+                        <button>
+                            <img :src="clipboard" alt="">
+                        </button>
+                    </span>
                 </div>
             </div>
         </div>
@@ -30,6 +39,9 @@
 import { ref } from 'vue'
 import PORTFOLIO from '../data/portfolioDB.js'
 
+import eye from '../assets/icons/eye.svg'
+import clipboard from '../assets/icons/clipboard-text.svg'
+
 export default {
     name: 'PortfolioView',
     components: {
@@ -43,7 +55,9 @@ export default {
 
         return {
             portfolio,
-            portfolioMenu
+            portfolioMenu,
+            eye,
+            clipboard
         }
     }
 }
@@ -90,13 +104,19 @@ export default {
     grid-column: 1 / span 10;
     grid-row: 8 / span 2;
     display: grid;
-    gap: 20px;
+    gap: 50px;
     width: 100%;
     grid-template-columns: repeat(5, 1fr);
 
     .grid-item {
         width: 200px;
         height: 200px;
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
         
         img {
             width: 100%;
@@ -149,12 +169,62 @@ export default {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
+    position: relative;
     align-items: center;
 
-    span {
-        font-size: 0.9em;
-        color: #333;
-        transform: rotate(336deg);
+    // span {
+    //     font-size: 0.9em;
+    //     color: #333;
+    //     transform: rotate(336deg);
+    // }
+
+    span.popoutPanel {
+        width: 60px;
+        height: 50px;
+        position: absolute;
+        display: flex;
+        top: -1px;
+        right: 5px;
+        transform: translateX(75%);
+        background-color: #eaf3f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px 5px;
+        box-shadow: 0 2px 5px inset rgba(255, 255, 255, 0.2), 0 -2px 5px inset rgba(255, 255, 255, 0.2);
+        z-index: -1;
+        flex-direction: column;
+        align-items: end;
+
+        hr {
+            width: 95%;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(224, 140, 71);
+            color: white;
+            width: 35px;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 1px solid #757575;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 
+                        0 2px 5px inset rgba(255, 255, 255, 0.2), 
+                        0 -2px 5px inset rgba(255, 255, 255, 0.2);
+
+            img {
+                width: 15px;
+                height: 15px;
+                object-fit: contain;
+            }
+
+            svg {
+                width: 10px;
+                height: 10px;
+            }
+        }
     }
 }
 </style>
