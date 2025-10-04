@@ -6,42 +6,42 @@ const ABOUT = {
             id: 1,
             title: 'HTML & CSS',
             level: 'mid-level',
-            experience: '5 years (2 commercial) experience',
+            experience: '5 years (2 commercial) experience.',
             icon: ''
         },
         {
             id: 2,
             title: 'PHP',
             level: 'mid-level',
-            experience: '5 years (2 commercial) experience',
+            experience: '5 years (2 commercial) experience.',
             icon: ''
         },
         {
             id: 3,
             title: 'MySQL',
             level: 'mid-level',
-            experience: '5 years (2 commercial) experience',
+            experience: '5 years (2 commercial) experience.',
             icon: ''
         },
         {
             id: 4,
             title: 'JavaScript',
             level: 'mid-level',
-            experience: '3 years (2 commercial) experience',
+            experience: '3 years (2 commercial) experience.',
             icon: ''
         },
         {
             id: 5,
             title: 'Vue.js',
             level: 'Junior',
-            experience: 'less than 1 year experience',
+            experience: 'less than 1 year experience.',
             icon: ''
         },
         {
             id: 6,
             title: 'Laravel',
             level: 'Junior',
-            experience: 'less than 1 year experience',
+            experience: 'less than 1 year experience.',
             icon: ''
         },
         {

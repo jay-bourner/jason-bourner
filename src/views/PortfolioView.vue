@@ -1,22 +1,18 @@
 <template>
     <div class="portfolio">
         <h1>Take a look at my work <br><small>so far...</small></h1>
+        <p>There are more projects built which are now being remade and upgraded to new technologies, for security, scalability and maintainabllity</p>
         <div class="personal-projects">
             <h2>My Personal projects</h2>
             <div class="portfolio-grid">
                 <div v-for="project in portfolio.projects" :key="project.id" class="grid-item">
-                    <button @mouseover="portfolioMenu(portfolio)" :href="project.link" target="_blank" rel="noopener noreferrer">
-                        <img :src="project.image" :alt="project.description">
-                    </button>
-                    <span class="popoutPanel">
-                        <button>
-                            <img :src="eye" alt="">
+                    <PortfolioPopout :project="project" />
+
+                    <div class="portButton">
+                        <button @click="portfolioMenu(project)">
+                            <img :src="project.image" :alt="project.description">
                         </button>
-                        <hr>
-                        <button>
-                            <img :src="clipboard" alt="">
-                        </button>
-                    </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -39,25 +35,23 @@
 import { ref } from 'vue'
 import PORTFOLIO from '../data/portfolioDB.js'
 
-import eye from '../assets/icons/eye.svg'
-import clipboard from '../assets/icons/clipboard-text.svg'
+import PortfolioPopout from '../components/PortfolioPopout.vue'
 
 export default {
     name: 'PortfolioView',
     components: {
+        PortfolioPopout
     },
     setup() {
         const portfolio = ref(PORTFOLIO)
 
-        const portfolioMenu = () => {
-            console.log('portfolio menu')
-        } 
+        const portfolioMenu = (project) => {
+            project.isActive = !project.isActive
+        }
 
         return {
             portfolio,
             portfolioMenu,
-            eye,
-            clipboard
         }
     }
 }
@@ -108,6 +102,20 @@ export default {
     width: 100%;
     grid-template-columns: repeat(5, 1fr);
 
+    .portButton {
+        position: relative;
+        min-width: 75px;
+        background-color: #eaf3f9;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+        z-index: 2;
+    }
+
     .grid-item {
         width: 200px;
         height: 200px;
@@ -142,6 +150,20 @@ export default {
             width: 100px;
             height: 100px;
             margin: auto;
+
+            a {
+                position: relative;
+                min-width: 75px;
+                background-color: #eaf3f9;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+                display: flex;
+                justify-content: center;
+                position: relative;
+                align-items: center;
+                padding: 10px;
+            }
             
             img {
                 width: 75%;
@@ -162,69 +184,12 @@ export default {
 }
 
 .grid-item {
-    min-width: 75px;
-    background-color: #eaf3f9;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
     position: relative;
-    align-items: center;
 
     // span {
     //     font-size: 0.9em;
     //     color: #333;
     //     transform: rotate(336deg);
     // }
-
-    span.popoutPanel {
-        width: 60px;
-        height: 50px;
-        position: absolute;
-        display: flex;
-        top: -1px;
-        right: 5px;
-        transform: translateX(75%);
-        background-color: #eaf3f9;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px 5px;
-        box-shadow: 0 2px 5px inset rgba(255, 255, 255, 0.2), 0 -2px 5px inset rgba(255, 255, 255, 0.2);
-        z-index: -1;
-        flex-direction: column;
-        align-items: end;
-
-        hr {
-            width: 95%;
-        }
-
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgb(224, 140, 71);
-            color: white;
-            width: 35px;
-            border-radius: 5px;
-            cursor: pointer;
-            overflow: hidden;
-            border: 1px solid #757575;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 
-                        0 2px 5px inset rgba(255, 255, 255, 0.2), 
-                        0 -2px 5px inset rgba(255, 255, 255, 0.2);
-
-            img {
-                width: 15px;
-                height: 15px;
-                object-fit: contain;
-            }
-
-            svg {
-                width: 10px;
-                height: 10px;
-            }
-        }
-    }
 }
 </style>
